@@ -14,5 +14,5 @@ let rand = motaDeviner[Math.floor(Math.random()*motaDeviner.length)];
 //afficher le mot à deviner en remplaçant les lettres par des underscores//
     let mot = rand.replace(/[a-z]/gi, ' _ ');
     console.log(mot);
-    document.getElementsByTagName("h1").innerhtml = mot
+    document.getElementById("word").innerHTML = mot
 //
