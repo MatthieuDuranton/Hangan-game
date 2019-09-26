@@ -8,11 +8,13 @@ let valeurBouton = document.getElementsByTagName("button")
 //proposer un mot au hasard//
 let rand = motaDeviner[Math.floor(Math.random()*motaDeviner.length)];
     console.log(rand);
-    console.log(rand.length);
-    console.log(rand[0]);
 
 //afficher le mot à deviner en remplaçant les lettres par des underscores//
     let mot = rand.replace(/[a-z]/gi, ' _ ');
     console.log(mot);
-    document.getElementById("word").innerHTML = mot
-//
+    document.getElementById("word").innerHTML = mot;
+
+//remplacer underscores par lettre proposée si true//    
+    function GFG_click(clicked) { 
+        console.log(clicked); 
+    }          
