@@ -1,6 +1,7 @@
 let motaDeviner = ['coucou', 'anticonstitutionnellement', 'monde', 'carrelage'];
 let lettre = "a"
 
+
 //proposer un mot au hasard//
 let motMystere = motaDeviner[Math.floor(Math.random()*motaDeviner.length)];
     console.log(motMystere);
@@ -24,5 +25,8 @@ function GFG_click(letter) {
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 412fcf2df52114c88eea1e32870817bc4eb7c542
