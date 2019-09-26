@@ -8,9 +8,9 @@ let motMystere = motaDeviner[Math.floor(Math.random()*motaDeviner.length)];
     console.log(motMystere[0]);
 
 //afficher le mot à deviner en remplaçant les lettres par des underscores//
-let underscores = motMystere.replace(/[a-z]/gi, ' _ ');
+let underscores = motMystere.replace(/[a-z]/gi, '?');
     console.log(underscores);
-    console.log(underscores[1]);
+    
 document.getElementById("word").innerHTML = underscores;//afficher les underscores sur page avec variable word
 
 //récupérer la lettre du bouton appuyé//    
@@ -20,13 +20,7 @@ function GFG_click(letter) {
     console.log(lettre);
     for (i=0; i<=motMystere.length; i++){//remplacer underscore si on a la lettre
         if (lettre === motMystere[i]){
-            underscores[i+1] = lettre;
+            document.getElementById("word").value[i] = lettre;
         }
     }
 }
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 412fcf2df52114c88eea1e32870817bc4eb7c542
