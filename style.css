@@ -1,0 +1,30 @@
+img {
+    height: 100px;
+    width: auto;
+}
+.table1 {
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+}
+.td1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid black;
+}
+.row-1 {
+    width: 20%;
+}
+.row-2 {
+    width: 20%;
+}
+.row-3 {
+    width: 20%;
+}
+.row-4 {
+    width: 20%;
+}
+.row-5 {
+    width: 20%;
+}
