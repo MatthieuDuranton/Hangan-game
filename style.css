@@ -16,20 +16,24 @@ h1 {
 
 .keys {
     margin: auto;
-    margin-top: 30px;
-    margin-bottom: 70px;
+    margin-top: 30px; 
     background-color: rgb(156, 205, 34);
-    border: 5px solid rgb(117, 153, 25);
+    border: 5px solid rgb(156, 205, 34);
 
 }
 
 button {
-    border: 5px solid rgb(117, 153, 25);
+    border: 1px solid rgb(66, 66, 66);
     text-align: center;
     width: 100%;
     margin: 0px, auto;
-    background-color: rgb(174, 205, 34);
+    background-color: rgb(212, 212, 212);
     padding: 10px 20px;
+    
+}
+
+button:hover {
+    background-color: rgb(197, 197, 197);
 }
 
 .path {
@@ -43,20 +47,12 @@ button {
     width: auto;
     justify-self: flex-start;
     position: relative;
-    animation: theupdown 5s infinite;
     animation: move 2s infinite;
-}
-@keyframes theupdown {
-    0% {animation-timing-function:steps(); top:0px;}
-    25% {animation-timing-function:steps(); top:10px;}
-    50% {animation-timing-function:steps(); top:0px;}
-    75% {animation-timing-function:steps(); top:-10px;}
-    100% {animation-timing-function:steps(); top:0px;}
 }
 
 @keyframes move {
     from {left: 0%;}
-    to {left: 15%;}
+    to {left: 10%;}
 }
 
 #space {
@@ -71,7 +67,19 @@ button {
 }
 
 .listBouton {
-    width: 25%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.listBouton > button {
+    background-color: rgb(212, 212, 212);
+    width: 10%;
+}
+.listBouton > button:hover {
+    background-color: rgb(155, 155, 155);
 }
 
 
@@ -80,25 +88,3 @@ button {
 
 
 
-
-.td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border: 1px solid black;
-}
-.row-1 {
-    width: 20%;
-}
-.row-2 {
-    width: 20%;
-}
-.row-3 {
-    width: 20%;
-}
-.row-4 {
-    width: 20%;
-}
-.row-5 {
-    width: 20%;
-}
