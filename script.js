@@ -39,15 +39,30 @@ function GFG_click(letter) {//récupérer l'ID du bouton
     }
     document.getElementById("word").innerHTML = questionMarks;//modifier les questionMarks selon la réponse
     console.log(reponse);
+
     if (reponse === false){
-        j = j++;
+        j = j+1;
         console.log(j)
-        if (j=1 && reponse === false){
-            alert("Première erreur...");
+        if (j<=1 && reponse === false){
+            var elem = document.getElementById("emily");
+            elem.setAttribute('src',"./img/Emily.png")
         }else if (j>1 && j<5 && reponse === false){
-            alert("oups, choisis une autre lettre");
-        }else if (j=5 && reponse === false){
-            alert("C'est perdu !");
+            function avance(){
+                var pos = 0;
+                var id = setInterval(frame, 10);
+                function frame(){
+                    if (pos == 20){
+                        clearInterval(id);
+                    }else{
+                        pos++;
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            avance();
+            }
+        }else if (j>4 && reponse === false){
+            alert("C'est perdu ! Emily a mangé votre chocolat...");
+
         }
     }else{
         alert("bravo");
