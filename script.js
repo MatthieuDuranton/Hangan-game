@@ -1,30 +1,34 @@
-var facile = ['ABAT', 'AGIR', 'AIDE', 'BANC', 'BEAU', 'CAMP', 'CHAT', 'CHEZ'];
-var amateur = ['ABSENT', 'BAOBAB', 'BAQUET', 'BORGNE', 'CANARD', 'CANTAL', 'CHEVEU', 'DANGER'];
-var pro = ['ABDUCTEUR', 'ACCELERER', 'ACCOSTAGE', 'BACTERIEN', 'BAGARREUR', 'CABILLAUD', 'BURALISTE', 'DEBLAYAGE'];
+var facile = ['abat', 'agir', 'aide', 'banc', 'beau', 'camp', 'chat', 'chez'];
+var amateur = ['absent', 'baobab', 'baquet', 'borgne', 'canard', 'cantal', 'cheveu', 'danger'];
+var pro = ['abducteur', 'accelerer', 'accostage', 'bacterien', 'bagarreur', 'cabillaud', 'buraliste', 'deblayage'];
 var motaDeviner = [];
 var lettre = "";
 var reponse = false;
+var j = 0;
 
-document.getElementById("facile").addEventListener('click', () => {
-    motaDeviner = facile;
-})
-document.getElementById("amateur").addEventListener('click', () => {
-    motaDeviner = amateur;
-})
-document.getElementById("difficile").addEventListener('click', () => {
-    motaDeviner = pro;
-})
-//proposer un mot au hasard//
-var motMystere = motaDeviner[Math.floor(Math.random()*motaDeviner.length)];
+//document.getElementById("facile").addEventListener('click', () => {
+    //proposer un mot au hasard//
+    var motMystere = facile[Math.floor(Math.random()*facile.length)];
     console.log(motMystere);
+    //afficher le mot à deviner en remplaçant les lettres par des questionMarks//
+    var questionMarks = motMystere.replace(/[a-z]/gi, '?'); 
+    //afficher les questionMarks sur page avec variable word
+    document.getElementById("word").innerHTML = questionMarks;
 
-//afficher le mot à deviner en remplaçant les lettres par des questionMarks//
-var questionMarks = motMystere.replace(/[a-z]/gi, '?');
-    
-document.getElementById("word").innerHTML = questionMarks;//afficher les questionMarks sur page avec variable word
+/*document.getElementById("amateur").addEventListener('click', () => {
+    var motMystere = amateur[Math.floor(Math.random()*amateur.length)];
+    console.log(motMystere);
+    var questionMarks = motMystere.replace(/[a-z]/gi, '?');
+    document.getElementById("word").innerHTML = questionMarks;
+
+document.getElementById("difficile").addEventListener('click', () => {
+    var motMystere = pro[Math.floor(Math.random()*pro.length)];
+    console.log(motMystere);
+    var questionMarks = motMystere.replace(/[a-z]/gi, '?');
+    document.getElementById("word").innerHTML = questionMarks;*/
+
 
 //récupérer la lettre du bouton appuyé et actions à effectuer//    
-
 function GFG_click(letter) {//récupérer l'ID du bouton 
     lettre = String(letter);//transformer l'ID en string
     for (i=0; i<motMystere.length; i++){//remplacer le questionMarks si on a une lettre qui correspond
@@ -34,17 +38,20 @@ function GFG_click(letter) {//récupérer l'ID du bouton
         }
     }
     document.getElementById("word").innerHTML = questionMarks;//modifier les questionMarks selon la réponse
-
-    for (j=0; j<=5; j++) {
-        if (j=1 && reponse === false){
-            
-        }else if (j>1 && j<5 && reponse === false){
-            
-        }else if (j=5 && reponse === false){
-
-        }
-    }
     console.log(reponse);
+    if (reponse === false){
+        j = j++;
+        console.log(j)
+        if (j=1 && reponse === false){
+            alert("Première erreur...");
+        }else if (j>1 && j<5 && reponse === false){
+            alert("oups, choisis une autre lettre");
+        }else if (j=5 && reponse === false){
+            alert("C'est perdu !");
+        }
+    }else{
+        alert("bravo");
+    }
     reponse = false;//réinitialiser reponse à false sinon elle resterait true
 }
 
