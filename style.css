@@ -42,15 +42,21 @@ button {
     height: 100px;
     width: auto;
     justify-self: flex-start;
-
-    transform: move;
-    transition-duration: 1s;
-    transition-timing-function: linear;
+    position: relative;
+    animation: theupdown 5s infinite;
+    animation: move 2s infinite;
+}
+@keyframes theupdown {
+    0% {animation-timing-function:steps(); top:px;}
+    25% {animation-timing-function:steps(); top:10px;}
+    50% {animation-timing-function:steps(); top:0px;}
+    75% {animation-timing-function:steps(); top:-10px;}
+    100% {animation-timing-function:steps(); top:0px;}
 }
 
 @keyframes move {
-    from {left: 0%}
-    to {left: 50%}
+    from {left: 0%;}
+    to {left: 15%;}
 }
 
 #space {
