@@ -5,6 +5,9 @@ var motaDeviner = [];
 var lettre = "";
 var reponse = false;
 var j = 0;
+var pos = 250;
+var elem = document.getElementById("emily");
+var elem2 = document.getElementById("chocolat");
 
 //document.getElementById("facile").addEventListener('click', () => {
     //proposer un mot au hasard//
@@ -43,29 +46,77 @@ function GFG_click(letter) {//récupérer l'ID du bouton
     if (reponse === false){
         j = j+1;
         console.log(j)
-        if (j<=1 && reponse === false){
-            var elem = document.getElementById("emily");
-            elem.setAttribute('src',"./img/Emily.png")
-        }else if (j>1 && j<5 && reponse === false){
+        if (j<=1){
+            elem.setAttribute('src',"./img/Emily.png");
+        }else if (j<=2){
             function avance(){
-                var pos = 0;
                 var id = setInterval(frame, 10);
                 function frame(){
-                    if (pos == 20){
+                    if (pos == 350){
                         clearInterval(id);
                     }else{
                         pos++;
                         elem.style.left = pos + 'px';
                     }
                 }
-            avance();
             }
-        }else if (j>4 && reponse === false){
-            alert("C'est perdu ! Emily a mangé votre chocolat...");
-
+            avance();
+        }else if (j<=3 && reponse === false){
+            function avance(){
+                var id = setInterval(frame, 10);
+                function frame(){
+                    if (pos == 450){
+                        clearInterval(id);
+                    }else{
+                        pos++;
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+            avance();
+        }else if (j<=4){
+            function avance(){
+                var id = setInterval(frame, 10);
+                function frame(){
+                    if (pos == 550){
+                        clearInterval(id);
+                    }else{
+                        pos++;
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+            avance();
+        }else if (j<=5){
+            function avance(){
+                var id = setInterval(frame, 10);
+                function frame(){
+                    if (pos == 650){
+                        clearInterval(id);
+                    }else{
+                        pos++;
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+            avance();
+        }else if (j<=6){
+            function avance(){
+                var id = setInterval(frame, 10);
+                function frame(){
+                    if (pos == 750){
+                        clearInterval(id);
+                    }else{
+                        pos++;
+                        elem.style.left = pos + 'px';
+                    }
+                }
+            }
+            avance();
+        }else if (j>6){
+            elem2.setAttribute('src',"./img/alfoil.jpg");
+            document.getElementById("word").innerHTML = "C'est perdu ! Emily a mangé votre chocolat...";
         }
-    }else{
-        alert("bravo");
     }
     reponse = false;//réinitialiser reponse à false sinon elle resterait true
 }
