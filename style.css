@@ -47,7 +47,6 @@ button:hover {
     width: auto;
     justify-self: flex-start;
     position: absolute;
-
 }
 
 @keyframes move {
