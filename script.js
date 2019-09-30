@@ -19,6 +19,8 @@ function GFG_click(letter) {//récupérer l'ID du bouton
     for (i=0; i<motMystere.length; i++){//remplacer le questionMarks si on a une lettre qui correspond
         if (lettre === motMystere[i]){
             questionMarks = questionMarks.substring(0, i) + lettre + questionMarks.substring(i+1);//je dois casser mon string en 2. Je ne peux pas le modifier directement en JS
+        }else{
+            
         }
     }
     document.getElementById("word").innerHTML = questionMarks
