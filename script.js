@@ -1,9 +1,9 @@
 var facile = ['abat', 'agir', 'aide', 'banc', 'beau', 'camp', 'chat', 'chez'];
 var amateur = ['absent', 'baobab', 'baquet', 'borgne', 'canard', 'cantal', 'cheveu', 'danger'];
 var pro = ['abducteur', 'accelerer', 'accostage', 'bacterien', 'bagarreur', 'cabillaud', 'buraliste', 'deblayage'];
-var motaDeviner = [];
 var lettre = "";
 var reponse = false;
+var reponses = [''];
 var j = 0;
 var pos = 250;
 var elem = document.getElementById("emily");
@@ -42,7 +42,8 @@ function GFG_click(letter) {//récupérer l'ID du bouton
     }
     document.getElementById("word").innerHTML = questionMarks;//modifier les questionMarks selon la réponse
     console.log(reponse);
-
+    document.getElementById("reponses").innerHTML = "Vous avez choisi les lettres : " + reponses.push(lettre);
+    
     if (reponse === false){
         j = j+1;
         console.log(j)
@@ -117,7 +118,7 @@ function GFG_click(letter) {//récupérer l'ID du bouton
             elem2.setAttribute('src',"./img/alfoil.jpg");
             document.getElementById("word").innerHTML = "C'est perdu ! Emily a mangé votre chocolat...";
         }
-    }
+    } 
     reponse = false;//réinitialiser reponse à false sinon elle resterait true
 }
 
