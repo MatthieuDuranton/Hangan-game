@@ -1,5 +1,5 @@
 # Hangman game
-https://matthieuduranton.github.io/adaptation-RWD/
+https://matthieuduranton.github.io/Hangan-game/
 
 ### Goal:
 * Train our skills using JS
